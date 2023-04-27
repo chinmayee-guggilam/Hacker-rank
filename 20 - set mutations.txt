@@ -1,0 +1,18 @@
+n = int(input())
+s = set(map(int,input().split()))
+
+count = int(input())
+
+for i in range(count):
+    cmd = input().split()
+    set_ = set(map(int,input().split()))
+    if cmd[0] == 'intersection_update':
+        s.intersection_update(set_)
+    elif cmd[0] == 'update':
+        s.update(set_)
+    elif cmd[0] == 'symmetric_difference_update':
+        s.symmetric_difference_update(set_)
+    elif cmd[0] == 'difference_update':
+        s.difference_update(set_)
+
+print(sum(s))
