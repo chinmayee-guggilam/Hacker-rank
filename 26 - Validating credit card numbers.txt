@@ -1,0 +1,15 @@
+import re
+N = int(input())
+if 0< N <100 : 
+      for i in range(N) :
+        num = input()
+        if re.match(r'^[4-6]\d{3}(-?\d{4}){3}$',num) and len(num.replace("-", "")) == 16:
+            num = num.replace("-", "")
+            if  re.search(r'(\d)\1{3,}',num) :
+                print('Invalid')
+            else:
+                print('Valid')
+        else:
+            print('Invalid')
+else :
+    pass
