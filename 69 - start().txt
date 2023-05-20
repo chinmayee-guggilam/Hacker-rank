@@ -1,0 +1,7 @@
+import re
+S, k = input(), input()
+if not re.search(f'(?=({k}))', S) is None:
+    for m in re.finditer(f'(?=({k}))', S):
+        print (f'({m.start()}, {m.start() + len(k)-1})')
+else:
+    print('(-1, -1)')

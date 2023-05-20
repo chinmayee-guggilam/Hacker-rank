@@ -1,0 +1,21 @@
+s=input()
+L0=[]
+L1=[]
+L2=[]
+L3=[]
+L4=[]
+for i in sorted(s):
+    
+    if i.isupper():
+        L2.append(i)
+    elif i.islower():
+        L1.append(i)
+    elif i.isdigit() and int(i)%2!=0:
+        L3.append(i)
+    elif i.isdigit() and int(i)%2==0:
+        L4.append(i)
+        
+
+L0=L1+L2+L3+L4
+for _ in L0:
+    print(_,end='')

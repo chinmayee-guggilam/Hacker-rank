@@ -1,0 +1,8 @@
+from itertools import combinations
+n,word, k = int(input()), input().split(), int(input())
+word_per = list(combinations(word,k))
+count=0
+for i in word_per:
+    if ('a' in i):
+        count+=1
+print(count/len(word_per))

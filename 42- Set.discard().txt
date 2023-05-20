@@ -1,0 +1,12 @@
+n = int(input())
+s = set(map(int, input().split()))
+m = int(input())
+for _ in range(m):
+    params = input().split()
+    method = params[0]
+    if len(params) > 1:
+        value = int(params[1])
+        getattr(s, method)(value)
+    else:
+        getattr(s, method)()
+print(sum(s))

@@ -1,0 +1,14 @@
+from collections import deque
+
+for _ in range(int(input())):
+    _ = int(input())
+    d = deque(map(int, input().split()))
+    a = max(d[0], d[-1])
+    for _ in range(len(d)):
+        if d[0] <= d[-1] <= a:
+            a = d.pop()
+        elif d[-1] <= d[0] <= a:
+            a = d.popleft()
+        else:
+            break
+    print('Yes' if len(d) == 0 else 'No')

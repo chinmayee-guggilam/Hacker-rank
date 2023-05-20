@@ -1,0 +1,27 @@
+import math
+import os
+import random
+import re
+import sys
+
+
+
+
+first_multiple_input = input().rstrip().split()
+
+n = int(first_multiple_input[0])
+
+m = int(first_multiple_input[1])
+
+matrix = []
+
+for _ in range(n):
+    matrix_item = input()
+    matrix.append(matrix_item)
+s = ''.join([s[i] for i in range(m) for s in matrix])
+s2 = re.sub(r"(?P<start>[A-Za-z0-9]+)([!,@,#,$,%,&, \s]{2,}|[!,@,#,$,%,&]|\s{2,})(?P<end>[A-Za-z0-9]+)", "\g<start> \g<end>",s)
+while s != s2:
+    s = s2
+    s2 = re.sub(r"(?P<start>[A-Za-z0-9]+)([!,@,#,$,%,&, \s]{2,}|[!,@,#,$,%,&]|\s{2,})(?P<end>[A-Za-z0-9]+)", "\g<start> \g<end>",s)
+    
+print(s)

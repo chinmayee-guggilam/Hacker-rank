@@ -1,0 +1,15 @@
+import numpy as np
+from numpy import linalg as ln
+
+n = int(input())
+
+meta_mat = [list(map(float, input().split()))[:n] for i in range(n)]
+
+sanitizer = [len(l) != n for l in meta_mat]
+
+if any(sanitizer):
+    raise ValueError("there is a mismatch in the number of elements")
+
+mat = np.array(meta_mat)
+
+print(round(ln.det(mat), ndigits=2))

@@ -1,0 +1,6 @@
+from itertools import combinations_with_replacement
+
+st, r = input().split()
+
+allCombination = list(combinations_with_replacement(sorted(st), int(r)))
+[print("".join(perm)) for perm in allCombination]

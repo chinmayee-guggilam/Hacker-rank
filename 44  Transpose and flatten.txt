@@ -1,0 +1,11 @@
+import numpy as np
+
+nm=list(map(int,input().split()))
+
+mat=[list(map(int, input().split())) for i in range(nm[0])]
+
+arr=np.array(mat).reshape(nm[0],nm[1])
+
+print(arr.transpose())
+
+print(arr.flatten())
