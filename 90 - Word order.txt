@@ -1,0 +1,11 @@
+n = int(input())
+numbers = {}
+
+for _ in range(n):
+    key = input()
+    numbers[key] = numbers.get(key, 0) + 1
+
+print(len(numbers))
+for item in numbers.values():
+    print(item, end=" ")
+print("\n")
